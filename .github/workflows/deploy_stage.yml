@@ -23,7 +23,7 @@ jobs:
       - name: npm install
         run: npm i
       - name: Setup CLI
-        uses: sandeep-paliwal/aio-cli-setup-action
+        uses: sandeep-paliwal/aio-cli-setup-action@0.0.3
         with:
           os: ${{ matrix.os }}
       - name: Build
