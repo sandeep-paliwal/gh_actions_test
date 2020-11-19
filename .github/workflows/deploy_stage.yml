@@ -27,13 +27,15 @@ jobs:
         with:
           os: ${{ matrix.os }}
       - name: Build
-        uses: sandeep-paliwal/aio-apps-action@1.0.3
+        env:
+          AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_STAGE }}
+        uses: sandeep-paliwal/aio-apps-action@1.0.4
         with:
           os: ${{ matrix.os }}
           command: build
           AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_STAGE }}
       - name: Deploy
-        uses: sandeep-paliwal/aio-apps-action@1.0.3
+        uses: sandeep-paliwal/aio-apps-action@1.0.4
         with:
           os: ${{ matrix.os }}
           command: deploy
