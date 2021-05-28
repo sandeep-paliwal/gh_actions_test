@@ -29,7 +29,8 @@ jobs:
           command: build
           AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_STAGE }}
       - name: Test
-        uses: adobe/aio-apps-action@1.0.0
-        with:
-          os: ${{ matrix.os }}
-          command: test
+        run: echo "Test direct - $TEST_ENV_VAR , and test with map $env.TEST_ENV_VAR"
+#         uses: adobe/aio-apps-action@1.0.0
+#         with:
+#           os: ${{ matrix.os }}
+#           command: test
