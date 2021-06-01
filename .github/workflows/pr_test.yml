@@ -26,10 +26,15 @@ jobs:
         uses: sandeep-paliwal/aio-apps-action@master
         with:
           os: ${{ matrix.os }}
-          command: build
+          CLIENTID: ${{ secrets.CLIENTID }}
+          CLIENTSECRET: ${{ secrets.CLIENTSECRET }}
+          TECHNICALACCID: ${{ secrets.TECHNICALACCID }}
+          IMSORGID: ${{ secrets.IMSORGID }}
+          SCOPES: ${{ secrets.SCOPES }}
+          KEY: ${{ secrets.KEY }}
           AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_STAGE }}
-      - name: Test
-        run: echo "Test direct - $TEST_ENV_VAR , and test with map $env.TEST_ENV_VAR"
+#       - name: Test
+#         run: echo "Check env var $TEST_JWT_TOKEN"
 #         uses: adobe/aio-apps-action@1.0.0
 #         with:
 #           os: ${{ matrix.os }}
