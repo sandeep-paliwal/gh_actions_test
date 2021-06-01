@@ -33,8 +33,8 @@ jobs:
           SCOPES: ${{ secrets.SCOPES }}
           KEY: ${{ secrets.KEY }}
           AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_STAGE }}
-#       - name: Test
-#         run: echo "Check env var $TEST_JWT_TOKEN"
+      - name: Test
+        run: echo "Check env var $TEST_JWT_TOKEN"
 #         uses: adobe/aio-apps-action@1.0.0
 #         with:
 #           os: ${{ matrix.os }}
