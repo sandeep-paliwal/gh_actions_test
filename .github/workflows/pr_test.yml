@@ -23,7 +23,7 @@ jobs:
 #         with:
 #           os: ${{ matrix.os }}
       - name: Check1
-        run: echo "Check before generating token, env var - $TEST_JWT_TOKEN "
+        run: echo "Test Check before generating token, env var - $TEST_JWT_TOKEN "
       - name: Build
         uses: sandeep-paliwal/aio-apps-action@master
         with:
