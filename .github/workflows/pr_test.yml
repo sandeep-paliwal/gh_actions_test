@@ -25,10 +25,10 @@ jobs:
       - name: Check1
         run: echo "Test Check before generating token, env var - $AIO_IMS_CONTEXTS_CLI_ACCESS__TOKEN "
       - name: Auth
-        uses: sandeep-paliwal/aio-apps-action@master
+        uses: adobe/aio-apps-action@auth_support
         with:
           os: ${{ matrix.os }}
-          command: build
+          command: auth
           CLIENTID: ${{ secrets.CLIENTID }}
           CLIENTSECRET: ${{ secrets.CLIENTSECRET }}
           TECHNICALACCID: ${{ secrets.TECHNICALACCID }}
