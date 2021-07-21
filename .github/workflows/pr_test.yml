@@ -31,7 +31,7 @@ jobs:
           command: auth
           CLIENTID: ${{ secrets.CLIENTID }}
           CLIENTSECRET: ${{ secrets.CLIENTSECRET }}
-          TECHNICALACCID: ${{ secrets.TECHNICALACCOUNTID }}
+          TECHNICALACCOUNTID: ${{ secrets.TECHNICALACCID }}
           IMSORGID: ${{ secrets.IMSORGID }}
           SCOPES: ${{ secrets.SCOPES }}
           KEY: ${{ secrets.KEY }}
