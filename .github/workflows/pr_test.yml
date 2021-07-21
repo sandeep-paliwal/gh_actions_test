@@ -25,7 +25,7 @@ jobs:
       - name: Check1
         run: echo "Test Check before generating token, env var - $AIO_IMS_CONTEXTS_CLI_ACCESS__TOKEN "
       - name: Auth
-        uses: adobe/aio-apps-action@auth_support
+        uses: sandeep-paliwal/aio-apps-action@nopublish_support
         with:
           os: ${{ matrix.os }}
           command: auth
