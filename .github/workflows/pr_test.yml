@@ -28,6 +28,7 @@ jobs:
         uses: sandeep-paliwal/aio-apps-action@nopublish_support
         with:
           os: ${{ matrix.os }}
+          command: deploy
           nopublish: true
           CLIENTID: ${{ secrets.CLIENTID }}
           CLIENTSECRET: ${{ secrets.CLIENTSECRET }}
