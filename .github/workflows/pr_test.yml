@@ -29,7 +29,6 @@ jobs:
         with:
           os: ${{ matrix.os }}
           command: deploy
-          nopublish: false
           CLIENTID: ${{ secrets.CLIENTID }}
           CLIENTSECRET: ${{ secrets.CLIENTSECRET }}
           TECHNICALACCID: ${{ secrets.TECHNICALACCID }}
