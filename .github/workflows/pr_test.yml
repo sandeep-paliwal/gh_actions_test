@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         node-version: ['12']
-        os: [macOS-latest, ubuntu-latest, windows-latest]
+        os: [macOS-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -16,20 +16,29 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install
-        run: npm i
-      - name: Setup CLI
-        uses: adobe/aio-cli-setup-action@1.0.0
+#       - name: npm install
+#         run: npm i
+#       - name: Setup CLI
+#         uses: adobe/aio-cli-setup-action@1.0.0
+#         with:
+#           os: ${{ matrix.os }}
+      - name: Check1
+        run: echo "Test Check before generating token, env var - $AIO_IMS_CONTEXTS_CLI_ACCESS__TOKEN "
+      - name: Auth
+        uses: adobe/aio-apps-action@2.0.0
         with:
           os: ${{ matrix.os }}
-      - name: Build
-        uses: adobe/aio-apps-action@1.0.0
-        with:
-          os: ${{ matrix.os }}
-          command: build
+          command: auth
+          CLIENTID: ${{ secrets.CLIENTID }}
+          CLIENTSECRET: ${{ secrets.CLIENTSECRET }}
+          TECHNICALACCOUNTID: ${{ secrets.TECHNICALACCID }}
+          IMSORGID: ${{ secrets.IMSORGID }}
+          SCOPES: ${{ secrets.SCOPES }}
+          KEY: ${{ secrets.KEY }}
           AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_STAGE }}
-      - name: Test
-        uses: adobe/aio-apps-action@1.0.0
-        with:
-          os: ${{ matrix.os }}
-          command: test
+      - name: Check2
+        run: echo "Check after generating token, env var - $AIO_IMS_CONTEXTS_CLI_ACCESS__TOKEN "
+#         uses: adobe/aio-apps-action@1.0.0
+#         with:
+#           os: ${{ matrix.os }}
+#           command: test
